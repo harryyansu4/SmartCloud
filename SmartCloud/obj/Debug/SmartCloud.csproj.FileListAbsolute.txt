@@ -1,0 +1,9 @@
+D:\PersonalSpace\study\App\SmartCloud\SmartCloud\bin\Debug\SmartCloud.exe.config
+D:\PersonalSpace\study\App\SmartCloud\SmartCloud\bin\Debug\SmartCloud.exe
+D:\PersonalSpace\study\App\SmartCloud\SmartCloud\bin\Debug\SmartCloud.pdb
+D:\PersonalSpace\study\App\SmartCloud\SmartCloud\obj\Debug\SmartCloud.csprojAssemblyReference.cache
+D:\PersonalSpace\study\App\SmartCloud\SmartCloud\obj\Debug\SmartCloud.MainWindow.resources
+D:\PersonalSpace\study\App\SmartCloud\SmartCloud\obj\Debug\SmartCloud.Properties.Resources.resources
+D:\PersonalSpace\study\App\SmartCloud\SmartCloud\obj\Debug\SmartCloud.csproj.GenerateResource.cache
+D:\PersonalSpace\study\App\SmartCloud\SmartCloud\obj\Debug\SmartCloud.exe
+D:\PersonalSpace\study\App\SmartCloud\SmartCloud\obj\Debug\SmartCloud.pdb
