@@ -7,3 +7,13 @@ D:\PersonalSpace\study\App\SmartCloud\SmartCloud\obj\Debug\SmartCloud.Properties
 D:\PersonalSpace\study\App\SmartCloud\SmartCloud\obj\Debug\SmartCloud.csproj.GenerateResource.cache
 D:\PersonalSpace\study\App\SmartCloud\SmartCloud\obj\Debug\SmartCloud.exe
 D:\PersonalSpace\study\App\SmartCloud\SmartCloud\obj\Debug\SmartCloud.pdb
+E:\MySpace\C#\SmartCloud\SmartCloud\bin\Debug\SmartCloud.exe.config
+E:\MySpace\C#\SmartCloud\SmartCloud\bin\Debug\SmartCloud.exe
+E:\MySpace\C#\SmartCloud\SmartCloud\bin\Debug\SmartCloud.pdb
+E:\MySpace\C#\SmartCloud\SmartCloud\obj\Debug\SmartCloud.csprojAssemblyReference.cache
+E:\MySpace\C#\SmartCloud\SmartCloud\obj\Debug\SmartCloud.MainWindow.resources
+E:\MySpace\C#\SmartCloud\SmartCloud\obj\Debug\SmartCloud.Properties.Resources.resources
+E:\MySpace\C#\SmartCloud\SmartCloud\obj\Debug\SmartCloud.csproj.GenerateResource.cache
+E:\MySpace\C#\SmartCloud\SmartCloud\obj\Debug\SmartCloud.csproj.CoreCompileInputs.cache
+E:\MySpace\C#\SmartCloud\SmartCloud\obj\Debug\SmartCloud.exe
+E:\MySpace\C#\SmartCloud\SmartCloud\obj\Debug\SmartCloud.pdb

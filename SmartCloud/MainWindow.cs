@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartCloud.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,10 +21,45 @@ namespace SmartCloud
         /// 窗体上一个位置
         /// </summary>
         private Point OldMouseLocation;
+        /// <summary>
+        /// 用于存储已创建的UserControl对象
+        /// </summary>
+        public Dictionary<string, UserControl> ControlCacheDic = new Dictionary<string, UserControl>();
 
         public MainWindow()
         {
             InitializeComponent();
+            // 初始化首次启动程序时的UserControl界面，并储存在缓存字典中
+            CommonServiceControl csControl = new CommonServiceControl();
+            this.AddUserControlToPanel(csControl);
+            ControlCacheDic.Add("CommonServiceControl", csControl);
+        }
+
+        /// <summary>
+        /// 点击导航列表中的按钮时移动选中效果滑块
+        /// </summary>
+        /// <param name="btn"></param>
+        private void MoveCheckedSlider(Control btn)
+        {
+            if (btn != null && btn is Button)
+            {
+                CheckedSlider.Top = btn.Top;
+                CheckedSlider.Height = btn.Height;
+            }
+        }
+
+        /// <summary>
+        /// 将传入的用户控件展示在UserControlsPanel中
+        /// </summary>
+        /// <param name="c"></param>
+        private void AddUserControlToPanel(Control c)
+        {
+            if (c != null && c is UserControl)
+            {
+                c.Dock = DockStyle.Fill;
+                this.OperateSpace_Center.Controls.Clear();
+                this.OperateSpace_Center.Controls.Add(c);
+            }
         }
 
         /// <summary>
@@ -107,6 +143,68 @@ namespace SmartCloud
             {
                 this.WindowState = FormWindowState.Maximized;
             }
+        }
+
+        /// <summary>
+        /// 社区服务按钮点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CommonServiceButton_Click(object sender, EventArgs e)
+        {
+            // 将选中效果滑块移动至当前按钮
+            MoveCheckedSlider(this.CommonServiceButton);
+            // 优先从公共字典中获取UserControl
+            CommonServiceControl csControl;
+            if (ControlCacheDic.ContainsKey("CommonServiceControl"))
+            {
+                csControl = ControlCacheDic["CommonServiceControl"] as CommonServiceControl;
+            }
+            else
+            {
+                csControl = new CommonServiceControl();
+                this.ControlCacheDic.Add("CommonServiceControl", csControl);
+            }
+            // 加载界面
+            this.AddUserControlToPanel(csControl);
+        }
+
+        /// <summary>
+        /// 我的服务按钮点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MyServiceButton_Click(object sender, EventArgs e)
+        {
+            // 将选中效果滑块移动至当前按钮
+            MoveCheckedSlider(this.MyServiceButton);
+            // 优先从公共字典中获取UserControl
+            MyServiceControl msControl;
+            if (ControlCacheDic.ContainsKey("MyServiceControl"))
+            {
+                msControl = ControlCacheDic["MyServiceControl"] as MyServiceControl;
+            }
+            else
+            {
+                msControl = new MyServiceControl();
+                this.ControlCacheDic.Add("MyServiceControl", msControl);
+            }
+            // 加载界面
+            this.AddUserControlToPanel(msControl);
+        }
+
+        /// <summary>
+        /// 导航列表控制按钮点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NavigateControlButton_Click(object sender, EventArgs e)
+        {
+            // 实现导航列表的收缩和展开
+            if (NavigateList.Width == 160)
+                NavigateList.Width = 50;
+            else
+                NavigateList.Width = 160;
         }
     }
 }
