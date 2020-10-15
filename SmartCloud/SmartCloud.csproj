@@ -60,6 +60,7 @@
     <Compile Include="UserControls\CommonServiceControl.Designer.cs">
       <DependentUpon>CommonServiceControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Function\MyServiceTask.cs" />
     <Compile Include="UserControls\MyServiceControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,7 +102,9 @@
   <ItemGroup>
     <Content Include="Images\Icons\关闭.png" />
     <Content Include="Images\Icons\取消最大化.png" />
+    <Content Include="Images\Icons\开始.png" />
     <Content Include="Images\Icons\我的服务.png" />
+    <Content Include="Images\Icons\搜索.png" />
     <Content Include="Images\Icons\收缩.png" />
     <Content Include="Images\Icons\最大化.png" />
     <Content Include="Images\Icons\最小化.png" />

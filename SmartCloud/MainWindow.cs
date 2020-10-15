@@ -22,6 +22,11 @@ namespace SmartCloud
         /// </summary>
         private Point OldMouseLocation;
         /// <summary>
+        /// 导航列表区域的初始宽度
+        /// </summary>
+        private int NLDefaultWidth = 160;
+
+        /// <summary>
         /// 用于存储已创建的UserControl对象
         /// </summary>
         public Dictionary<string, UserControl> ControlCacheDic = new Dictionary<string, UserControl>();
@@ -33,6 +38,8 @@ namespace SmartCloud
             CommonServiceControl csControl = new CommonServiceControl();
             this.AddUserControlToPanel(csControl);
             ControlCacheDic.Add("CommonServiceControl", csControl);
+            // 初始化导航列表区域的宽度
+            this.NavigateList.Width = NLDefaultWidth;
         }
 
         /// <summary>
@@ -201,10 +208,10 @@ namespace SmartCloud
         private void NavigateControlButton_Click(object sender, EventArgs e)
         {
             // 实现导航列表的收缩和展开
-            if (NavigateList.Width == 160)
+            if (NavigateList.Width == NLDefaultWidth)
                 NavigateList.Width = 50;
             else
-                NavigateList.Width = 160;
+                NavigateList.Width = NLDefaultWidth;
         }
     }
 }
