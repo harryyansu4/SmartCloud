@@ -12,9 +12,18 @@ namespace SmartCloud.UserControls
 {
     public partial class CommonServiceControl : UserControl
     {
+        
+
         public CommonServiceControl()
         {
             InitializeComponent();
+            // 初始化ListView的列表头
+            ColumnHeader chForListView = new ColumnHeader();
+            chForListView.Width = 280;
+            chForListView.Text = "文件名";
+            chForListView.TextAlign = HorizontalAlignment.Left;// 设置列的对齐方式
+            this.FileListView.Columns.Add(chForListView);
+            
         }
     }
 }

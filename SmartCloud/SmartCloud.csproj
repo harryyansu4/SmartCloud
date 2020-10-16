@@ -111,6 +111,7 @@
     <Content Include="Images\Icons\最大化.png" />
     <Content Include="Images\Icons\最小化.png" />
     <Content Include="Images\Icons\社区服务.png" />
+    <Content Include="Images\Icons\箭头.png" />
     <Content Include="Images\Icons\返回.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -118,6 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="GoBackButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAWFJREFUWEft
+        lCtLBFEYhqdZvBSDsN2wVTAowiaLRTFYxaZJUcSguN1foNFk1WIUrGJQQbAoChaDYDSNzznf6wq7c9tx
+        56R54GGH7/aetFFNTRniOD7QZ1gI3sZvjFUKA3kb+OmCf1GrWshZxTef2IVGqoH7K/jok9JppTihM/3D
+        8gLe4H/5wCs8wXUcU0QyDLiXu4WqeMVdxaXDUNUP2VJUNgzmPkSjPdAax1lcw2Pspq3RfBhOfYhGcmF0
+        Cs/9kvGEQ2oXg4Weh6hVCMYb+OwXjUW1+oPFzkNUKgwrS25P7KtcDg609FkYdpo+2jhTORyEjlq250Hl
+        cBA6YtmGyuEgc9KiPXcqh4PQOcv2nKocDkIvLduzo3IYCDyy3A7zalULQct47SP/uFA7GwbdH04Zb/EF
+        vzCJpiKy0fAgeccZnc/HdgbCPe7hsE4Xg4VD2U74zXIT3f/+NDZ0rqYmhSj6Ac8RDjcFFwLkAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
   <data name="BrowseButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAVtJREFUSEvt
@@ -145,7 +157,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADq
-        CAAAAk1TRnQBSQFMAgEBAgEAAQgBAAEIAQABEgEAARIBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CAAAAk1TRnQBSQFMAgEBAgEAASABAAEgAQABEgEAARIBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABSAMAARIDAAEBAQABCAUAARABBRgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
         AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
         AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
@@ -184,18 +196,6 @@
         Af4BcAcAAc8B/AH5Af4BcAcAAc8B/AH5Af4BcAcAAZ8B/gF5Af4BcAcAAYABAAF5AeABcAcAAc8BgAH5
         AeABcAcAAc8BAAH5AeQB8AcAAc4BPwH5AeEB8AcAAcABfwH4AQMB8AcAAeAB/wH8AQcB8AcABP8B8AcA
         BP8B8AcACw==
-</value>
-  </data>
-  <data name="GoBackButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAFhSURBVFhH7ZQrSwRRGIanWbwUg7DdsFUwKMImi0UxWMWmSVHEoLjdX6DRZNViFKxiUEGwKAoW
-        g2A0jc853+sKu3PbceekeeBhh+/2nrRRTU0Z4jg+0GdYCN7Gb4xVCgN5G/jpgn9Rq1rIWcU3n9iFRqqB
-        +yv46JPSaaU4oTP9w/IC3uB/+cArPMF1HFNEMgy4l7uFqnjFXcWlw1DVD9lSVDYM5j5Eoz3QGsdZXMNj
-        7Kat0XwYTn2IRnJhdArP/ZLxhENqF4OFnoeoVQjGG/jsF41FtfqDxc5DVCoMK0tuT+yrXA4OtPRZGHaa
-        Pto4UzkchI5atudB5XAQOmLZhsrhIHPSoj13KoeD0DnL9pyqHA5CLy3bs6NyGAg8stwO82pVC0HLeO0j
-        /7hQOxsG3R9OGW/xBb8wiaYistHwIHnHGZ3Px3YGwj3u4bBOF4OFQ9lO+M1yE93//jQ2dK6mJoUo+gHP
-        EQ43BRcC5AAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>
