@@ -106,9 +106,12 @@
     <Content Include="Images\Icons\我的服务.png" />
     <Content Include="Images\Icons\搜索.png" />
     <Content Include="Images\Icons\收缩.png" />
+    <Content Include="Images\Icons\文件.png" />
+    <Content Include="Images\Icons\文件夹.png" />
     <Content Include="Images\Icons\最大化.png" />
     <Content Include="Images\Icons\最小化.png" />
     <Content Include="Images\Icons\社区服务.png" />
+    <Content Include="Images\Icons\返回.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
