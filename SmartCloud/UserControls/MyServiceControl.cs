@@ -1,20 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.Concurrent;
 using SmartCloud.UserControls.Function;
 using System.Threading;
+using SmartCloud.Constants;
 
 namespace SmartCloud.UserControls
 {
     public partial class MyServiceControl : UserControl
     {
+        #region 私有变量区域
         /// <summary>
         /// 读取到的文件全路径集合
         /// </summary>
@@ -28,15 +24,18 @@ namespace SmartCloud.UserControls
         /// 文件根路径（用于校验当前路径是否越过根路径）
         /// </summary>
         private string RootFilePath = "";
+        #endregion
 
+        #region 公共变量区域
         /// <summary>
         /// 文件路径
         /// </summary>
         public string FilePath = "";
         /// <summary>
-        /// 线程队列
+        /// （文件读取）线程队列
         /// </summary>
-        public ConcurrentQueue<string> ProcessInfoQueue;
+        public ConcurrentQueue<string> FileReadQueue;
+        #endregion
 
         public MyServiceControl()
         {
@@ -50,7 +49,7 @@ namespace SmartCloud.UserControls
             // 将listView的图标集与imageList1绑定
             this.FileListView.SmallImageList = this.FileListImageList;
             // 实例化线程队列
-            ProcessInfoQueue = new ConcurrentQueue<string>();
+            FileReadQueue = new ConcurrentQueue<string>();
         }
 
         #region 开始执行时FileListView信息回显的线程执行区域
@@ -60,15 +59,15 @@ namespace SmartCloud.UserControls
             bool processControl = true;// 循环控制
             while (processControl)
             {
-                if (this.ProcessInfoQueue.IsEmpty)
+                if (this.FileReadQueue.IsEmpty)
                     continue;
                 // 从线程队列中获取信息
                 string infoStr = "";
-                bool successFlag = this.ProcessInfoQueue.TryDequeue(out infoStr);
+                bool successFlag = this.FileReadQueue.TryDequeue(out infoStr);
                 if (successFlag)
                 {
                     // 是否未结束
-                    if (!"process is finished".Equals(infoStr))
+                    if (!CommonConstant.QUEUE_STOP_FLAG.Equals(infoStr))
                         FilePathList.Add(infoStr);
                     else
                         processControl = false;
@@ -193,8 +192,7 @@ namespace SmartCloud.UserControls
             t.Start();
             // 实例化文件操作类，并开始执行
             MyServiceTask msTask = new MyServiceTask();
-            msTask.Start(this.FilePath, this.ProcessInfoQueue);
-
+            msTask.Start(this.FilePath, this.FileReadQueue);
         }
 
         /// <summary>

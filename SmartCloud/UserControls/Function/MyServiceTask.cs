@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartCloud.Constants;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
@@ -17,19 +18,24 @@ namespace SmartCloud.UserControls.Function
         private string FilePath;
 
         /// <summary>
-        /// 线程队列
+        /// (文件读取）线程队列
         /// </summary>
-        public ConcurrentQueue<string> Queue;
+        public ConcurrentQueue<string> FileReadQueue;
+        /// <summary>
+        ///（文件服务）线程队列
+        /// </summary>
+        public ConcurrentQueue<string> FileServiceQueue;
 
         public MyServiceTask()
         {
-
+            // 实例化线程队列
+            FileServiceQueue = new ConcurrentQueue<string>();
         }
 
         public void Start(string filePath, ConcurrentQueue<string> queue)
         {
             this.FilePath = filePath;
-            this.Queue = queue;
+            this.FileReadQueue = queue;
             Thread t = new Thread(new ThreadStart(ExecuteManager));
             t.Start();
         }
@@ -43,8 +49,9 @@ namespace SmartCloud.UserControls.Function
             List<string> filesList = new List<string>();
             // 获取文件全路径名
             this.GetFileFullNameToList(filesList, this.FilePath);
-
-            this.Queue.Enqueue("process is finished");
+            // 添加停止标识
+            this.FileReadQueue.Enqueue(CommonConstant.QUEUE_STOP_FLAG);
+            this.FileServiceQueue.Enqueue(CommonConstant.QUEUE_STOP_FLAG);
         }
 
         /// <summary>
@@ -62,7 +69,8 @@ namespace SmartCloud.UserControls.Function
                 foreach (FileInfo file in files)
                 {
                     filesList.Add(file.FullName);
-                    this.Queue.Enqueue(file.FullName);
+                    this.FileReadQueue.Enqueue(file.FullName);
+                    this.FileServiceQueue.Enqueue(file.FullName);
                 }
             }
             // 判断当前路径是否子文件夹，如果有则储存文件夹路径并递归获取其中的文件
@@ -72,7 +80,8 @@ namespace SmartCloud.UserControls.Function
                 foreach (DirectoryInfo directory in directories)
                 {
                     filesList.Add(directory.FullName);
-                    this.Queue.Enqueue(directory.FullName);
+                    this.FileReadQueue.Enqueue(directory.FullName);
+                    this.FileServiceQueue.Enqueue(directory.FullName);
                     this.GetFileFullNameToList(filesList, directory.FullName);
                 }
             }

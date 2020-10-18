@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.TitleBar = new System.Windows.Forms.Panel();
             this.MinimizeButton = new System.Windows.Forms.Button();
@@ -42,10 +43,13 @@
             this.OperateSpace = new System.Windows.Forms.Panel();
             this.OperateSpace_Center = new System.Windows.Forms.Panel();
             this.InformationBar = new System.Windows.Forms.Panel();
+            this.ShareButton = new ToggleButtonTest.ToggleButton.ToggleButton();
+            this.ShareTip = new System.Windows.Forms.ToolTip(this.components);
             this.TitleBar.SuspendLayout();
             this.NavigateList.SuspendLayout();
             this.NavigateControl_Top.SuspendLayout();
             this.OperateSpace.SuspendLayout();
+            this.InformationBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // TitleBar
@@ -212,13 +216,38 @@
             // 
             // InformationBar
             // 
-            this.InformationBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.InformationBar.BackColor = System.Drawing.SystemColors.Control;
+            this.InformationBar.Controls.Add(this.ShareButton);
             this.InformationBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.InformationBar.Location = new System.Drawing.Point(0, 0);
             this.InformationBar.Margin = new System.Windows.Forms.Padding(5);
             this.InformationBar.Name = "InformationBar";
             this.InformationBar.Size = new System.Drawing.Size(760, 40);
             this.InformationBar.TabIndex = 0;
+            // 
+            // ShareButton
+            // 
+            this.ShareButton.ButtonStyle.BorderWidth = 1;
+            this.ShareButton.ButtonStyle.DotDistance = 4;
+            this.ShareButton.ButtonStyle.ToggleButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ShareButton.ButtonStyle.ToggleOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(222)))));
+            this.ShareButton.ButtonStyle.ToggleOffFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(222)))));
+            this.ShareButton.ButtonStyle.ToggleOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(142)))), ((int)(((byte)(35)))));
+            this.ShareButton.ButtonStyle.ToggleOnFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(142)))), ((int)(((byte)(35)))));
+            this.ShareButton.Checked = false;
+            this.ShareButton.Enabled = false;
+            this.ShareButton.EnabledToggle = true;
+            this.ShareButton.Location = new System.Drawing.Point(9, 8);
+            this.ShareButton.Name = "ShareButton";
+            this.ShareButton.Size = new System.Drawing.Size(58, 25);
+            this.ShareButton.TabIndex = 0;
+            this.ShareTip.SetToolTip(this.ShareButton, "服务共享");
+            // 
+            // ShareTip
+            // 
+            this.ShareTip.AutomaticDelay = 200;
+            this.ShareTip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(222)))));
+            this.ShareTip.ForeColor = System.Drawing.SystemColors.Desktop;
             // 
             // MainWindow
             // 
@@ -237,6 +266,7 @@
             this.NavigateList.ResumeLayout(false);
             this.NavigateControl_Top.ResumeLayout(false);
             this.OperateSpace.ResumeLayout(false);
+            this.InformationBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -256,6 +286,8 @@
         private System.Windows.Forms.Button CommonServiceButton;
         private System.Windows.Forms.Panel CheckedSlider;
         private System.Windows.Forms.Button MyServiceButton;
+        private ToggleButtonTest.ToggleButton.ToggleButton ShareButton;
+        private System.Windows.Forms.ToolTip ShareTip;
     }
 }
 

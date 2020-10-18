@@ -47,6 +47,7 @@
             this.PGB_NoButton = new System.Windows.Forms.RadioButton();
             this.PGB_YesButton = new System.Windows.Forms.RadioButton();
             this.FileListImageList = new System.Windows.Forms.ImageList(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.LeftPanel.SuspendLayout();
             this.LeftPanel_Bar.SuspendLayout();
             this.CenterPanel.SuspendLayout();
@@ -56,6 +57,7 @@
             // 
             // LeftPanel
             // 
+            this.LeftPanel.Controls.Add(this.panel1);
             this.LeftPanel.Controls.Add(this.FileListView);
             this.LeftPanel.Controls.Add(this.LeftPanel_Bar);
             this.LeftPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -274,6 +276,15 @@
             this.FileListImageList.Images.SetKeyName(0, "文件夹.png");
             this.FileListImageList.Images.SetKeyName(1, "文件.png");
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 500);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(420, 10);
+            this.panel1.TabIndex = 2;
+            // 
             // MyServiceControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -315,5 +326,6 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
